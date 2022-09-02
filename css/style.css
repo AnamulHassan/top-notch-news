@@ -1,0 +1,9 @@
+.outline-none {
+  box-shadow: none !important;
+}
+.logo-fluid {
+  width: 80% !important;
+}
+.user-img-fluid {
+  width: 55% !important;
+}

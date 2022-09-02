@@ -18,6 +18,11 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-danger bg-opacity-10">
     <header>
@@ -26,7 +31,7 @@
       >
         <div class="container-fluid container">
           <div class="w-25">
-            <img class="w-50" src="icons/logo.png" alt="" />
+            <img class="logo-fluid" src="icons/logo.png" alt="" />
           </div>
           <button
             class="navbar-toggler"
@@ -53,7 +58,7 @@
                 class="w-25 d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-end justify-content-xl-end justify-content-xxl-end"
               >
                 <img
-                  class="w-75 rounded-circle"
+                  class="user-img-fluid rounded-circle"
                   src="icons/user-image.jpg"
                   alt=""
                 />
@@ -107,7 +112,7 @@
           <h4 class="fs-4 fw-semibold text-secondary me-4">Sort By View:</h4>
           <div class="dropdown">
             <a
-              class="btn btn-light fs-4 fw-semibold text-secondary dropdown-toggle"
+              class="btn btn-light fs-4 fw-semibold text-secondary dropdown-toggle outline-none"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
@@ -125,13 +130,13 @@
         <div class="d-flex pb-4">
           <button
             type="button"
-            class="btn text-white btn-info fs-4 fw-semibold"
+            class="btn text-white btn-info fs-4 fw-semibold outline-none"
           >
             Today's Pick
           </button>
           <button
             type="button"
-            class="btn btn-outline-info fs-4 fw-semibold ms-4"
+            class="btn btn-outline-info fs-4 fw-semibold ms-4 outline-none"
           >
             Trending
           </button>
@@ -141,25 +146,95 @@
     <section class="container mt-5">
       <div class="card mb-3">
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="..." />
+          <div class="col-md-4 d-flex justify-content-center">
+            <img
+              src="icons/img.jpg"
+              class="img-fluid rounded-4 p-2"
+              alt="..."
+            />
           </div>
-          <div class="col-md-8">
+          <div
+            class="col-md-8 px-0 px-sm-0 px-md-1 px-lg-4 px-xl-4 px-xxl-4 py-5 m-0"
+          >
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
+              <h5 class="card-title fs-3">
                 This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+              </h5>
+              <p class="card-text fs-base">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit This
+                is a wider card with supporting text below as a natural lead-in
+                to additional content. This content is a little bit This is a
+                wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.
               </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
+              <section
+                class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between col-12 bg-info bg-opacity-10"
+              >
+                <div
+                  class="d-flex align-items-center col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6"
+                >
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="w-25 rounded-circle border border-secondary border-2 me-2"
+                      src="icons/user-image.jpg"
+                      alt=""
+                    />
+                    <ul class="list-unstyled col-12">
+                      <li class="fs-5 fw-bold text-secondary">Jane Cooper</li>
+                      <li class="fs-6 fw-semibold text-secondary">
+                        Jan 10, 2022
+                      </li>
+                    </ul>
+                  </div>
+                  <ul
+                    class="list-unstyled d-flex align-items-center justify-content-end pe-4 col-6"
+                  >
+                    <li>
+                      <i class="me-1 fs-3 fw-bold text-secondary bi bi-eye"></i>
+                    </li>
+                    <li class="fs-4 fw-bold text-secondary">1.5M</li>
+                  </ul>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6"
+                >
+                  <ul
+                    class="list-unstyled d-flex align-items-center fs-4 text-secondary justify-content-between col-4 col-sm-4 col-md-4 col-lg-6 col-xl-6 col-xxl-6"
+                  >
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star"></i></li>
+                  </ul>
+                  <span
+                    ><i class="col-6 d-block fs-1 bi bi-info-circle"></i
+                  ></span>
+                </div>
+              </section>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <footer
+      class="border border-secondary border-2 border-bottom-0 border-end-0 border-start-0 border-opacity-50"
+    >
+      <div class="d-flex justify-content-center mt-5">
+        <img src="icons/logo.png" alt="" />
+      </div>
+      <h3 class="text-center mt-3 text-uppercase text-secondary">
+        Follow with social network
+      </h3>
+      <ul>
+        <li>
+          <a title="Facebook" href="https://web.facebook.com/?_rdc=1&_rdr"
+            >Facebook</a
+          >
+        </li>
+      </ul>
+    </footer>
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
