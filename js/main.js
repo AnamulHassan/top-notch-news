@@ -12,7 +12,10 @@ const displayCategory = async () => {
     const { category_id, category_name } = apiData.data.news_category[index];
     element.addEventListener('mouseover', function (event) {
       event.target.classList.toggle('active');
-      event.target.setAttribute('onclick', `displayNews("${category_id}")`);
+      event.target.setAttribute(
+        'onclick',
+        `displayNews("${category_id}","${category_name}")`
+      );
       event.target.classList.toggle('active');
     });
     element.innerText = category_name;
@@ -20,13 +23,20 @@ const displayCategory = async () => {
 };
 
 displayCategory();
-const displayNews = async categoryId => {
+const displayNews = async (categoryId, categoryName) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
   const apiData = await fetchData(url);
   const receivingData = apiData.data;
-  console.log(receivingData);
+  const sortReceivingData = receivingData
+    .sort((a, b) => a.total_view - b.total_view)
+    .reverse();
+  console.log(sortReceivingData);
+  sortReceivingData.length > 0
+    ? (alertField.innerText = `${sortReceivingData.length} items found for category ${categoryName}`)
+    : (alertField.innerText = `${categoryName} News not found`);
+
   newsContainer.textContent = '';
-  receivingData.forEach((element, index) => {
+  sortReceivingData.forEach((element, index) => {
     const {
       _id,
       author,
@@ -41,17 +51,15 @@ const displayNews = async categoryId => {
     } = element;
     const { img, name, published_date } = author;
     const date = new Date(published_date);
-    console.log(category_id);
-    // console.log(element);
+    // console.log(category_id);
 
     const newArticle = document.createElement('article');
     newArticle.classList.add('card', 'mb-3');
     newArticle.innerHTML = `
-    
     <div class="row g-0">
       <div class="col-md-4 d-flex justify-content-center">
         <img
-          src="${image_url}"
+          src="${image_url ? image_url : 'icons/no-image.jpg'}"
           class="img-fluid rounded-4 p-2"
           alt="..."
         />
@@ -61,7 +69,7 @@ const displayNews = async categoryId => {
       >
         <div class="card-body">
           <h5 class="card-title fs-3">
-            ${title}
+            ${title ? title : 'Title not found'}
           </h5>
           <p class="card-text fs-base">
            ${
@@ -79,8 +87,8 @@ const displayNews = async categoryId => {
               <div class="d-flex align-items-center">
                 <img
                   class="w-25 rounded-circle border border-secondary border-2 me-2"
-                  src="${img}"
-                  alt="${name}"
+                  src="${img ? img : 'icons/user.png'}"
+                  alt="${name ? name : 'Name not found'}"
                 />
                 <ul class="list-unstyled col-12">
                   <li class="fs-5 fw-bold text-secondary">${
