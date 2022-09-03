@@ -24,7 +24,7 @@ const renderMarkupNews = receivingData => {
   freeSpace.classList.add('d-none');
   newsContainer.textContent = '';
   receivingData.forEach(element => {
-    const { _id, author, details, image_url, title, total_view } = element;
+    const { _id, author, details, thumbnail_url, title, total_view } = element;
     const { img, name, published_date } = author;
     const date = new Date(published_date);
     const newArticle = document.createElement('article');
@@ -33,8 +33,8 @@ const renderMarkupNews = receivingData => {
     <div class="row g-0">
       <div class="col-md-4 d-flex justify-content-center">
         <img
-          src="${image_url ? image_url : 'icons/no-image.jpg'}"
-          class="img-fluid rounded-4 p-2"
+          src="${thumbnail_url ? thumbnail_url : 'icons/no-image.jpg'}"
+          class="w-100 h-100 rounded-4 p-2"
           alt="..."
         />
       </div>
@@ -87,7 +87,7 @@ const renderMarkupNews = receivingData => {
                   <i class="me-1 fs-3 fw-bold text-secondary bi bi-eye"></i>
                 </li>
                 <li class="fs-4 fw-bold text-secondary">${
-                  total_view ? total_view : '0'
+                  total_view ? total_view : 'Data not found'
                 }</li>
               </ul>
             </div>

@@ -41,15 +41,8 @@ const displayDetails = async newsId => {
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
     const apiData = await fetchData(url);
     const receivingData = apiData.data[0];
-    const {
-      author,
-      details,
-      image_url,
-      others_info,
-      rating,
-      title,
-      total_view,
-    } = receivingData;
+    const { author, details, image_url, rating, title, total_view } =
+      receivingData;
     const { img, name, published_date } = author;
     const date = new Date(published_date);
     detailsContainer.innerHTML = `
@@ -66,7 +59,7 @@ const displayDetails = async newsId => {
               </div>
               <div class="modal-body">
                 <div class="card border border-0">
-                  <img src="${
+                  <img class="w-100 h-100" src="${
                     image_url ? image_url : 'icons/no-image.jpg'
                   }" class="card-img-top" alt="..." />
                   <div class="card-body">
