@@ -11,13 +11,17 @@ const fetchData = async url => {
 };
 // ------------Display Alert Function------------
 const displayAlert = (receivingData, categoryName) => {
-  receivingData.length > 0
-    ? (alertField.innerText = `${receivingData.length} items found for category ${categoryName}`)
-    : (alertField.innerText = `${categoryName} News not found`);
+  if (receivingData.length > 0) {
+    alertField.innerText = `${receivingData.length} items found for category ${categoryName}`;
+  } else {
+    loadingSpinner.classList.add('d-none');
+    alertField.innerText = 'News not found';
+  }
 };
 
 // ----------Render Markup On HTML File Function----------
 const renderMarkupNews = receivingData => {
+  freeSpace.classList.add('d-none');
   newsContainer.textContent = '';
   receivingData.forEach(element => {
     const { _id, author, details, image_url, title, total_view } = element;
@@ -114,6 +118,7 @@ const renderMarkupNews = receivingData => {
     </div>
     `;
     newsContainer.appendChild(newArticle);
+    loadingSpinner.classList.add('d-none');
   });
 };
 
@@ -122,6 +127,7 @@ const sortingArray = receivingData =>
   receivingData.sort((a, b) => a.total_view - b.total_view).reverse();
 // --------Display Error On Screen Function--------
 const displayError = error => {
+  loadingSpinner.classList.add('d-none');
   displayErrorMessage.classList.remove('d-none');
   errorText.innerText = error;
 };

@@ -70,11 +70,11 @@
         </div>
       </nav>
       <!-- Tab-bar -->
-      <div class="container">
+      <div class="container" id="tab-bar">
         <ul
           class="nav nav-tabs fs-6 fw-semibold d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-between justify-content-xl-between justify-content-xxl-between py-2"
         >
-          <li class="nav-link active text-info" aria-current="page">Home</li>
+          <li class="nav-link text-info" aria-current="page">Home</li>
           <li
             class="nav-link text-secondary category-list"
             role="button"
@@ -168,6 +168,23 @@
         </div>
       </div>
     </header>
+    <!-- ---------Spinner--------- -->
+    <section
+      class="position-absolute top-25 start-50 translate-middle d-none"
+      id="spinner"
+    >
+      <button class="btn fs-2 px-5 py-3 btn-info" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-lg me-2"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    </section>
+    <section class="d-none" style="height: 70vh" id="free-space">
+      &nbsp;
+    </section>
     <!-- Card -->
     <section class="container mt-5" id="news-container"></section>
     <!-- Modal  -->
@@ -203,9 +220,8 @@
       </svg>
 
       <div
-        class="alert alert-danger d-flex align-items-center"
+        class="alert alert-danger d-flex flex-column align-items-center"
         role="alert"
-        style="width: 800px"
       >
         <svg
           class="bi flex-shrink-0 me-2"
@@ -216,7 +232,7 @@
         >
           <use xlink:href="#exclamation-triangle-fill" />
         </svg>
-        <div class="fs-5 fw-bold" id="error-text"></div>
+        <div class="fs-5 fw-bold text-center" id="error-text"></div>
       </div>
     </section>
 

@@ -1,8 +1,9 @@
+// ----------Main Function----------
 const displayCategory = async () => {
   try {
+    freeSpace.classList.remove('d-none');
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     const apiData = await fetchData(url);
-    // console.log(apiData);
     categoryList.forEach((element, index) => {
       const { category_id, category_name } = apiData.data.news_category[index];
       element.addEventListener('mouseover', function (event) {
@@ -23,6 +24,7 @@ const displayCategory = async () => {
 displayCategory();
 const displayNews = async (categoryId, categoryName) => {
   try {
+    loadingSpinner.classList.remove('d-none');
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     const apiData = await fetchData(url);
     const receivingData = apiData.data;
@@ -35,15 +37,22 @@ const displayNews = async (categoryId, categoryName) => {
 };
 
 const displayDetails = async newsId => {
-  const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
-  const apiData = await fetchData(url);
-  const receivingData = apiData.data[0];
-  const { author, details, image_url, others_info, rating, title, total_view } =
-    receivingData;
-  const { img, name, published_date } = author;
-  const date = new Date(published_date);
-  console.log(others_info);
-  detailsContainer.innerHTML = `
+  try {
+    const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
+    const apiData = await fetchData(url);
+    const receivingData = apiData.data[0];
+    const {
+      author,
+      details,
+      image_url,
+      others_info,
+      rating,
+      title,
+      total_view,
+    } = receivingData;
+    const { img, name, published_date } = author;
+    const date = new Date(published_date);
+    detailsContainer.innerHTML = `
     <div class="modal-header">
                 <h5 class="modal-title fs-3 fw-semibold">${
                   title ? title : 'Title not found'
@@ -125,21 +134,35 @@ const displayDetails = async newsId => {
               </div>
              
     `;
+    loadingSpinner.classList.add('d-none');
+  } catch (error) {
+    displayError(error);
+  }
 };
 
+// ------------Event Handler------------
 btnTrending.addEventListener('click', function () {
+  loadingSpinner.classList.remove('d-none');
   const url = `https://openapi.programming-hero.com/api/news/category/08`;
   displayTrending(url);
 });
 btnTodaysPick.addEventListener('click', function () {
+  loadingSpinner.classList.remove('d-none');
   const url = `https://openapi.programming-hero.com/api/news/category/08`;
   displayTodaysPick(url);
 });
 
-const displayTrending = async url => {
+tabBar.addEventListener('click', function (event) {
+  for (const li of event.target.parentNode.children) {
+    li.classList.remove('active');
+  }
+  event.target.classList.toggle('active');
+});
+// -------------Feature Function-------------
+const displayTrending = url => {
   processFetchData(url, true, 'is_trending', 'Trending');
 };
 
-const displayTodaysPick = async url => {
+const displayTodaysPick = url => {
   processFetchData(url, true, 'is_todays_pick', "Today's Pick");
 };

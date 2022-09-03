@@ -6,3 +6,6 @@ const btnTrending = document.getElementById('btn-trending');
 const btnTodaysPick = document.getElementById('btn-todays-pick');
 const displayErrorMessage = document.getElementById('error-message');
 const errorText = document.getElementById('error-text');
+const loadingSpinner = document.getElementById('spinner');
+const freeSpace = document.getElementById('free-space');
+const tabBar = document.getElementById('tab-bar');
