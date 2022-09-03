@@ -112,7 +112,7 @@ const displayDetails = async newsId => {
                   </li>
                 </ul>
                 <ul
-                  class="list-unstyled d-flex align-items-center justify-content-center pe-4 col-6 col-sm-6 col-md-5 col-lg-2 col-xl-2 col-xxl-2 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start "
+                  class="list-unstyled d-flex align-items-center justify-content-center pe-4 col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start "
                 >
                   <li class="fs-4 me-2 fw-bold text-secondary">
                     Rating: 
@@ -122,7 +122,7 @@ const displayDetails = async newsId => {
                   </li>
                 </ul>
                 <ul
-                  class="list-unstyled d-flex align-items-center fs-4 text-warning justify-content-between col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+                  class="list-unstyled d-flex align-items-center fs-4 text-warning justify-content-between col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2"
                 >
                   <li><i class="bi bi-star-fill"></i></li>
                   <li><i class="bi bi-star-fill"></i></li>
@@ -157,6 +157,11 @@ tabBar.addEventListener('click', function (event) {
     li.classList.remove('active');
   }
   event.target.classList.toggle('active');
+});
+btnHome.addEventListener('click', function () {
+  newsContainer.textContent = '';
+  alertField.innerText = 'Please, select categories :-)';
+  freeSpace.classList.remove('d-none');
 });
 // -------------Feature Function-------------
 const displayTrending = url => {

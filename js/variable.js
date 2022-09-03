@@ -9,3 +9,4 @@ const errorText = document.getElementById('error-text');
 const loadingSpinner = document.getElementById('spinner');
 const freeSpace = document.getElementById('free-space');
 const tabBar = document.getElementById('tab-bar');
+const btnHome = document.getElementById('btn-home');
