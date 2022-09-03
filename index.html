@@ -25,7 +25,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-danger bg-opacity-10">
+    <!-- Header -->
     <header>
+      <!-- Navigation -->
       <nav
         class="navbar navbar-expand-lg border border-secondary border-2 border-top-0 border-end-0 border-start-0 border-opacity-50"
       >
@@ -67,6 +69,7 @@
           </div>
         </div>
       </nav>
+      <!-- Tab-bar -->
       <div class="container">
         <ul
           class="nav nav-tabs fs-6 fw-semibold d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-between justify-content-xl-between justify-content-xxl-between py-2"
@@ -143,6 +146,7 @@
         </div>
       </div>
     </header>
+    <!-- Card -->
     <section class="container mt-5">
       <div class="card mb-3">
         <div class="row g-0">
@@ -208,12 +212,47 @@
                     <li><i class="bi bi-star-fill"></i></li>
                     <li><i class="bi bi-star"></i></li>
                   </ul>
+                  <!-- Button trigger modal -->
                   <span
-                    ><i class="col-6 d-block fs-1 bi bi-info-circle"></i
+                    class="link"
+                    role="button"
+                    tabindex="0"
+                    data-bs-toggle="modal"
+                    data-bs-target="#btn-show-details"
+                    ><i
+                      class="text-info col-6 d-block fs-1 bi bi-info-circle"
+                    ></i
                   ></span>
                 </div>
               </section>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal  -->
+    <section>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="btn-show-details"
+        tabindex="-1"
+        aria-labelledby="show-details"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="show-details">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer"></div>
           </div>
         </div>
       </div>
@@ -230,27 +269,30 @@
       <ul
         class="container list-unstyled d-flex justify-content-between col-11 col-sm-11 col-md-5 col-lg-4 col-xl-4 col-xxl-3"
       >
-        <li>
+        <li class="d-flex align-items-center text-primary">
+          <i class="fs-4 me-1 bi bi-facebook"></i>
           <a
-            class="text-decoration-none fs-4 text-secondary fw-bold"
+            class="text-decoration-none fs-6 text-secondary fw-bold"
             title="Facebook"
             target="_blank"
             href="https://web.facebook.com/?_rdc=1&_rdr"
             >Facebook</a
           >
         </li>
-        <li>
+        <li class="d-flex align-items-center text-danger">
+          <i class="fs-4 me-1 bi bi-instagram"></i>
           <a
-            class="text-decoration-none fs-4 text-secondary fw-bold"
+            class="text-decoration-none fs-6 text-secondary fw-bold"
             title="Instagram"
             target="_blank"
             href="https://www.instagram.com/"
             >Instagram</a
           >
         </li>
-        <li>
+        <li class="d-flex align-items-center text-danger">
+          <i class="fs-4 me-1 bi bi-youtube"></i>
           <a
-            class="text-decoration-none fs-4 text-secondary fw-bold"
+            class="text-decoration-none fs-6 text-secondary fw-bold"
             title="YouTube"
             target="_blank"
             href="https://www.youtube.com/"

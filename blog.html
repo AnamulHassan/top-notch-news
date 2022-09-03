@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top-Notch Blog</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="icons/news-portal.png"
+      type="image/x-icon"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-danger bg-opacity-10">
+    <!-- Header -->
+    <header>
+      <!-- Navigation -->
+      <nav
+        class="navbar navbar-expand-lg border border-secondary border-2 border-top-0 border-end-0 border-start-0 border-opacity-50"
+      >
+        <div class="container-fluid container">
+          <div class="w-25">
+            <img class="logo-fluid" src="icons/logo.png" alt="" />
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div
+              class="navbar-nav d-flex align-items-center fs-3 fw-semibold ms-auto justify-content-lg-end"
+            >
+              <a
+                class="nav-link me-0 me-sm-0 me-md-0 me-lg-4 me-xl-4 me-xxl-4"
+                href="#"
+                >News</a
+              >
+              <a class="nav-link" href="#">Blog</a>
+              <div
+                class="w-25 d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-end justify-content-xl-end justify-content-xxl-end"
+              >
+                <img
+                  class="user-img-fluid rounded-circle"
+                  src="icons/user-image.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Tab-bar -->
+      <div class="container">
+        <ul
+          class="nav nav-tabs fs-6 fw-semibold d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-between justify-content-xl-between justify-content-xxl-between py-2"
+        >
+          <li class="nav-link active text-info" aria-current="page">Home</li>
+          <li class="nav-link text-secondary" aria-current="page">
+            Breaking news
+          </li>
+          <li class="nav-link text-secondary" aria-current="page">
+            Regular news
+          </li>
+
+          <li class="nav-link text-secondary" aria-current="page">
+            International news
+          </li>
+
+          <li class="nav-link text-secondary" aria-current="page">Sports</li>
+
+          <li class="nav-link text-secondary" aria-current="page">
+            Entertainment
+          </li>
+
+          <li class="nav-link text-secondary" aria-current="page">Culture</li>
+
+          <li class="nav-link text-secondary" aria-current="page">Arts</li>
+          <li class="nav-link text-secondary" aria-current="page">All news</li>
+        </ul>
+      </div>
+    </header>
+    <section class="container">
+      <!-- Article 1 -->
+      <article class="mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              1. What is the difference between <code>var</code>,
+              <code>let</code>, and <code>const</code> keyword in JavaScript?
+            </h5>
+            <p class="card-text">
+              There are a bunch of differences between <code>var</code> ,
+              <code>let</code> and <code>const</code> . I will try to
+              differentiate those things as simple as possible. Variable
+              declared with <code>var</code> are in the function scope, on the
+              other hand, <code>let</code> and <code>const</code> are in the
+              block scope. <code>var</code> allows the hoisting, in contrast,
+              <code>let</code> and <code>const</code> don't allow the hoisting.
+              <code>var</code> accepts the reassigning variable, however,
+              <code>let</code> and <code>const</code> don't accept reassigning
+              variable.
+            </p>
+          </div>
+        </div>
+      </article>
+      <!-- Article 2 -->
+      <article class="mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              2. What is the differences between arrow function and regular
+              function in JavaScript?
+            </h5>
+            <p class="card-text">
+              Both regular and arrow functions work in a similar manner, yet
+              there are certain interesting differences between them, as
+              discussed below.
+              <br />
+              Regular functions created using function declarations or
+              expressions are &#x27;constructible&#x27; and
+              &#x27;callable&#x27;. Since regular functions are constructible,
+              they can be called using the &#x27;new&#x27; keyword. However, the
+              arrow functions are only &#x27;callable&#x27; and not
+              constructible. Thus, we will get a run-time error on trying to
+              construct a non-constructible arrow functions using the new
+              keyword.
+            </p>
+          </div>
+        </div>
+      </article>
+      <!-- Article 3 -->
+      <article class="mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              2. What is the differences between <code>map()</code>,
+              <code>filter()</code>, <code>forEach()</code>, and
+              <code>find()</code> in JavaScript?
+            </h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
+      </article>
+      <!-- Article 4 -->
+      <article class="mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              2. What is the difference between arrow function and regular
+              function in JavaScript?
+            </h5>
+            <p class="card-text">
+              There are a bunch of differences between <code>var</code> ,
+              <code>let</code> and <code>const</code> . I will try to
+              differentiate those things as simple as possible. Variable
+              declared with <code>var</code> are in the function scope, on the
+              other hand, <code>let</code> and <code>const</code> are in the
+              block scope. <code>var</code> allows the hoisting, in contrast,
+              <code>let</code> and <code>const</code> don't allow the hoisting.
+              <code>var</code> accepts the reassigning variable, however,
+              <code>let</code> and <code>const</code> don't accept reassigning
+              variable.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer
+      class="border border-secondary border-2 border-bottom-0 border-end-0 border-start-0 border-opacity-50"
+    >
+      <div class="d-flex justify-content-center mt-5">
+        <img src="icons/logo.png" alt="" />
+      </div>
+      <h5 class="text-center mt-5 text-uppercase text-secondary">
+        Follow with social network
+      </h5>
+      <ul
+        class="container list-unstyled d-flex justify-content-between col-11 col-sm-11 col-md-5 col-lg-4 col-xl-4 col-xxl-3"
+      >
+        <li class="d-flex align-items-center text-primary">
+          <i class="fs-4 me-1 bi bi-facebook"></i>
+          <a
+            class="text-decoration-none fs-6 text-secondary fw-bold"
+            title="Facebook"
+            target="_blank"
+            href="https://web.facebook.com/?_rdc=1&_rdr"
+            >Facebook</a
+          >
+        </li>
+        <li class="d-flex align-items-center text-danger">
+          <i class="fs-4 me-1 bi bi-instagram"></i>
+          <a
+            class="text-decoration-none fs-6 text-secondary fw-bold"
+            title="Instagram"
+            target="_blank"
+            href="https://www.instagram.com/"
+            >Instagram</a
+          >
+        </li>
+        <li class="d-flex align-items-center text-danger">
+          <i class="fs-4 me-1 bi bi-youtube"></i>
+          <a
+            class="text-decoration-none fs-6 text-secondary fw-bold"
+            title="YouTube"
+            target="_blank"
+            href="https://www.youtube.com/"
+            >YouTube</a
+          >
+        </li>
+      </ul>
+      <p class="text-center fs-6 fw-semibold text-black-50 m-4">
+        Copyright&copy; <span>2022</span> Top Notch News
+      </p>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
