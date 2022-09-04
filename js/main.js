@@ -2,6 +2,7 @@
 const displayCategory = async () => {
   try {
     freeSpace.classList.remove('d-none');
+    footerYearUpdate();
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     const apiData = await fetchData(url);
     categoryList.forEach((element, index) => {
@@ -48,7 +49,7 @@ const displayDetails = async newsId => {
     detailsContainer.innerHTML = `
     <div class="modal-header">
                 <h5 class="modal-title fs-3 fw-semibold">${
-                  title ? title : 'Title not found'
+                  title ? title : 'title not found'
                 }</h5>
                 <button
                   type="button"
@@ -64,7 +65,7 @@ const displayDetails = async newsId => {
                   }" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <p class="card-text">
-                     ${details ? details : 'Details not found'}
+                     ${details ? details : 'details not found'}
                     </p>
                   </div>
                 </div>
@@ -75,11 +76,11 @@ const displayDetails = async newsId => {
                   <img
                     class="w-25 rounded-circle border border-secondary border-2 me-2"
                     src="${img ? img : 'icons/user.png'}"
-                    alt="${name ? name : 'Name not found'}"
+                    alt="${name ? name : 'name not found'}"
                   />
                   <ul class="list-unstyled  text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start col-6 col-sm-6 col-md-4 col-lg-12 col-xl-12 col-xxl-12">
                     <li class="fs-5 fw-bold text-secondary">
-                      ${name ? name : 'Name not found'}
+                      ${name ? name : 'name not found'}
                     </li>
                     <li class="fs-6 fw-semibold text-secondary">
                       ${
@@ -89,7 +90,7 @@ const displayDetails = async newsId => {
                             date.getDate() +
                             ', ' +
                             date.getFullYear()
-                          : 'Date not found'
+                          : 'date not found'
                       }
                     </li>
                   </ul>
@@ -101,7 +102,7 @@ const displayDetails = async newsId => {
                     <i class="me-3 fs-3 fw-bold text-secondary bi bi-eye"></i>
                   </li>
                   <li class="fs-4 fw-bold text-secondary">
-                    ${total_view ? total_view : '0'}
+                    ${total_view ? total_view : 'data not found'}
                   </li>
                 </ul>
                 <ul
@@ -111,7 +112,7 @@ const displayDetails = async newsId => {
                     Rating: 
                   </li>
                   <li class="fs-4 fw-bold text-secondary">
-                    ${rating.number ? rating.number : '0'}
+                    ${rating.number ? rating.number : 'data not found'}
                   </li>
                 </ul>
                 <ul

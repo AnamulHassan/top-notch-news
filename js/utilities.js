@@ -43,13 +43,13 @@ const renderMarkupNews = receivingData => {
       >
         <div class="card-body">
           <h5 class="card-title fs-3">
-            ${title ? title : 'Title not found'}
+            ${title ? title : 'title not found'}
           </h5>
           <p class="card-text fs-base">
            ${
              details.length >= 106
                ? details.slice(0, 195) + '...'
-               : 'Details not found'
+               : 'details not found'
            }
           </p>
           <section
@@ -62,11 +62,11 @@ const renderMarkupNews = receivingData => {
                 <img
                   class="w-25 rounded-circle border border-secondary border-2 me-2"
                   src="${img ? img : 'icons/user.png'}"
-                  alt="${name ? name : 'Name not found'}"
+                  alt="${name ? name : 'name not found'}"
                 />
                 <ul class="list-unstyled col-12">
                   <li class="fs-5 fw-bold text-secondary">${
-                    name ? name : 'Name not found'
+                    name ? name : 'name not found'
                   }</li>
                   <li class="fs-6 fw-semibold text-secondary">${
                     date
@@ -75,7 +75,7 @@ const renderMarkupNews = receivingData => {
                         date.getDate() +
                         ', ' +
                         date.getFullYear()
-                      : 'Date not found'
+                      : 'date not found'
                   }
                   </li>
                 </ul>
@@ -87,7 +87,7 @@ const renderMarkupNews = receivingData => {
                   <i class="me-1 fs-3 fw-bold text-secondary bi bi-eye"></i>
                 </li>
                 <li class="fs-4 fw-bold text-secondary">${
-                  total_view ? total_view : 'Data not found'
+                  total_view ? total_view : 'data not found'
                 }</li>
               </ul>
             </div>
@@ -145,4 +145,10 @@ const processFetchData = async (url, isTrue, key, categoryName) => {
   } catch (error) {
     displayError(error);
   }
+};
+
+const footerYearUpdate = () => {
+  footerYear.innerText = new Date().getFullYear()
+    ? new Date().getFullYear()
+    : 'year not found';
 };
